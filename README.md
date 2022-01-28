@@ -1,4 +1,6 @@
 # medtrakker-svcs
+This branch is a pure kotlin version of the program.  This will have same features available as the java. Eventually.
+
 this will be a Service with REST api's that will allow you to keep track of personal medical stats.  These stats can be blood gluscoes, heart beat.
 
 # Configuration
