@@ -1,0 +1,1 @@
+rootProject.name = "hoss.org.medtrakker"
