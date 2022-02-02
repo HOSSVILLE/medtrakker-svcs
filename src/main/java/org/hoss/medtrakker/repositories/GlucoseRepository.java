@@ -12,6 +12,6 @@ import java.util.List;
 
 @Component
 @Repository
-public interface GlucoseRepository extends CrudRepository<GlucoseReading, Timestamp> {
+public interface GlucoseRepository extends CrudRepository<GlucoseReading, Integer> {
 
 }

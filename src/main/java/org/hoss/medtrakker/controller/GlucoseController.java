@@ -4,12 +4,10 @@ import org.hoss.medtrakker.models.GlucoseReading;
 import org.hoss.medtrakker.repositories.GlucoseRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.annotation.Immutable;
+
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.lang.reflect.Array;
-import java.sql.Timestamp;
 import java.util.*;
 
 @RestController
@@ -33,12 +31,17 @@ public class GlucoseController {
        return result;
     }
     @PostMapping("/api/reading")
+    @ResponseStatus(HttpStatus.CREATED)
     public void addGlucoseReading(@RequestBody GlucoseReading reading) {
-        logger.info("REading is {}", reading.getGlucoseReading());
-        Date newDate = new Date();
-        Timestamp ts = new Timestamp(newDate.getTime());
-        //reading.setGlucoseDateReading(ts);
+        if (reading.getGlucoseDateReading() == null) {
+            reading.setGlucoseDateReading(new Date());
+        }
+        logger.info("Reading is {}", reading.getGlucoseReading());
+        reading.setGlucoseReading(171);
+        reading.setGlucoseWhen("MORNING");
+        reading.setGlucoseNotes("just testing");
         glucoseRepository.save(reading);
+
 
     }
 }
