@@ -32,16 +32,12 @@ public class GlucoseController {
     }
     @PostMapping("/api/reading")
     @ResponseStatus(HttpStatus.CREATED)
-    public void addGlucoseReading(@RequestBody GlucoseReading reading) {
+    public GlucoseReading addGlucoseReading(@RequestBody GlucoseReading reading) {
         if (reading.getGlucoseDateReading() == null) {
             reading.setGlucoseDateReading(new Date());
         }
         logger.info("Reading is {}", reading.getGlucoseReading());
-        reading.setGlucoseReading(171);
-        reading.setGlucoseWhen("MORNING");
-        reading.setGlucoseNotes("just testing");
-        glucoseRepository.save(reading);
 
-
+        return glucoseRepository.save(reading);
     }
 }
