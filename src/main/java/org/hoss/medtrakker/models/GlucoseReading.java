@@ -10,6 +10,7 @@ import org.springframework.data.relational.core.mapping.Table;
 @Data
 @Table("glucose_readings")
 @AllArgsConstructor
+
 public class GlucoseReading {
 
     @Id

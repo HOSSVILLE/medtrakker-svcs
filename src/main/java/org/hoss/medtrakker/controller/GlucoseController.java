@@ -36,7 +36,7 @@ public class GlucoseController {
         if (reading.getGlucoseDateReading() == null) {
             reading.setGlucoseDateReading(new Date());
         }
-        logger.info("Reading is {}", reading.getGlucoseReading());
+        logger.info("Entry to be saved {}", reading);
 
         return glucoseRepository.save(reading);
     }
