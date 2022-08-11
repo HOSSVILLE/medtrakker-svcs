@@ -1,1 +1,1 @@
-web: java -jar build/libs/med-trakker*SNAPSHOT.jar -Dserver.port=$PORT
+web: java -jar build/libs/med-trakker*SNAPSHOT.jar
