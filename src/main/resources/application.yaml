@@ -3,5 +3,3 @@ spring:
     url: <local path here>
     username: <u>
     password: <p> 
-server:
-  port: $PORT
