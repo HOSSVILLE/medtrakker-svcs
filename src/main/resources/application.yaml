@@ -1,5 +1,7 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5435/medtrakker
-    username: postgres
-    password: mysecretpassword
+    url: <local path here>
+    username: <u>
+    password: <p> 
+server:
+  port: $PORT
